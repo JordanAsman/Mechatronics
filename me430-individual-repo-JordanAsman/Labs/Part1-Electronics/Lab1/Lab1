@@ -1,0 +1,48 @@
+// Part B
+void setup()
+{
+  // Inputs
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
+  
+  // Outputs for LEDS
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  
+  // Outputs for other things
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+    
+  // Green LED
+  ///if (digitalRead(2) == 0) {
+  //  digitalWrite(4, HIGH);
+  //  digitalWrite(5, LOW);
+  // } 
+  // Yellow LED
+  // else if (digitalRead(3) == 0){
+  //  digitalWrite(5, HIGH);
+  //  digitalWrite(4, LOW);
+  // }
+  // Blue LED
+  // analogWrite(6, analogRead(0)/4);
+  // digitalWrite(5, LOW);
+  // digitalWrite(4, LOW);
+  
+  // Outputs for LEDS
+  digitalWrite(4, !digitalRead(2));
+  digitalWrite(5, !digitalRead(3));
+  analogWrite(6, analogRead(0)/4);
+
+  // Outputs for other things
+  digitalWrite(12, !digitalRead(2));
+  digitalWrite(13, !digitalRead(3));
+  analogWrite(11, analogRead(0)/4);
+  
+  delay(10);
+}
